@@ -7,8 +7,18 @@ export default function Modal(){
         document.querySelector('.modal-wrapper').classList.remove('active')
     }
 
+    function colorBlue (){
+        document.querySelector('.modal-wrapper button').classList.remove('red')   
+    }
+
+    function colorRed (){
+        document.querySelector('.modal-wrapper button').classList.add('red')   
+    }
+
     return {
         open,
-        close
+        close,
+        colorBlue,
+        colorRed
     }
 }

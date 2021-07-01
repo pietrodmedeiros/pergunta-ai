@@ -68,6 +68,7 @@ button, .button {
     color: var(--white);
     cursor: pointer;
     transition: filter .2s;
+    padding: 1.3rem 3.2rem;
 }
 
 button:hover, .button:hover{
@@ -85,15 +86,17 @@ button.red,
 .button.red{
     background-color: var(--red);
     color: var(--white);
-    margin-left: .8rem;
+    
     width: min(15.5rem, 90%);
 }
+
 
 button.gray,
 .button.gray{
     background-color: var(--gray-light);
     color: var(--gray-dark);
     width: min(13.9rem, 90%);
+    margin-right: .8rem;
 }
 
 
