@@ -18,7 +18,7 @@ const roomId = document.querySelector("#room-id").dataset.id
 
 
 
-/* Catch all 'check' elements and open the modal at the click. */
+// Catch all 'check' elements and open the modal at the click.
 checkButtons.forEach(button => {
     button.addEventListener("click", handleClick)
 })
@@ -29,23 +29,29 @@ cancelButton.addEventListener("click", event => {
     modal.close()
 })
 
-/* Catch all delete buttons and open the modal at the click. */
+//Catch all delete buttons and open the modal at the click.
 deleteButtons.forEach(button => {
     button.addEventListener("click", (event) => handleClick(event, false))
 })
 
-
+// Function with all modal actions.
 function handleClick(event, check = true){
     event.preventDefault()
+    const form = document.querySelector(".modal form")
     const text = check ? "Marcar como lida" : "Excluir"
     const text2 = check ? "Sim" : "Excluir"
     const slug = check ? "check" : "delete"
-    
+    const roomId = document.querySelector("#room-id").dataset.id
+    const questionId = event.target.dataset.id
+    console.log(questionId)
+
+    form.setAttribute("action", `/room/${roomId}/${questionId}/${slug}`)
+
     modalTitle.innerHTML = `${text} esta pergunta`
     modalDescription.innerHTML = `Tem certeza que deseja ${text.toLocaleLowerCase()} esta pergunta?`
     modalButton.innerHTML = `${text2}`
     check ? modalButton.classList.remove("red") : modalButton.classList.add("red")
 
-    form.setAttribute("action", `/room/${roomId}/:question/${slug}`)
     modal.open()
+
 }
