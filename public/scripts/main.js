@@ -10,30 +10,39 @@ const modalTitle = document.querySelector(".modal h2")
 const modalDescription = document.querySelector(".modal p")
 const modalButton = document.querySelector(".modal button")
 
+const form = document.querySelector(".modal form")
+
+
+
+
+
 
 /* Catch all 'check' elements and open the modal at the click. */
 checkButtons.forEach(button => {
-    button.addEventListener("click", event => {
-        modalTitle.innerHTML = "Marcar como lida"
-        modalDescription.innerHTML = "Confirma que deseja marcar esta pergunta como lida?"
-        modalButton.innerHTML = "Sim, marcar"
-        modal.colorBlue()
-        modal.open()
-    })
+    button.addEventListener("click", handleClick)
 })
 
 /* Catch Cancel button from modal and close it.*/
 cancelButton.addEventListener("click", event => {
+    event.preventDefault()
     modal.close()
 })
 
 /* Catch all delete buttons and open the modal at the click. */
 deleteButtons.forEach(button => {
-    button.addEventListener("click", event => {
-        modalTitle.innerHTML = "Excluir esta pergunta"
-        modalDescription.innerHTML = "Confirma que deseja excluir esta pergunta?"
-        modalButton.innerHTML = "Sim, excluir"
-        modal.colorRed()
-        modal.open()
-    })
+    button.addEventListener("click", (event) => handleClick(event, false))
 })
+
+
+function handleClick(event, check = true){
+    event.preventDefault()
+    const text = check ? "Marcar como lida" : "Excluir"
+    const text2 = check ? "Sim" : "Excluir"
+
+    modalTitle.innerHTML = `${text} esta pergunta`
+    modalDescription.innerHTML = `Tem certeza que deseja ${text.toLocaleLowerCase()} esta pergunta?`
+    modalButton.innerHTML = `${text2}`
+    check ? modalButton.classList.remove("red") : modalButton.classList.add("red")
+
+    modal.open()
+}

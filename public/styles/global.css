@@ -69,6 +69,7 @@ button, .button {
     cursor: pointer;
     transition: filter .2s;
     padding: 1.3rem 3.2rem;
+    min-width: 15.5rem;
 }
 
 button:hover, .button:hover{
