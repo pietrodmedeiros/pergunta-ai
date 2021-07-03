@@ -43,7 +43,6 @@ function handleClick(event, check = true){
     const slug = check ? "check" : "delete"
     const roomId = document.querySelector("#room-id").dataset.id
     const questionId = event.target.dataset.id
-    console.log(questionId)
 
     form.setAttribute("action", `/room/${roomId}/${questionId}/${slug}`)
 
