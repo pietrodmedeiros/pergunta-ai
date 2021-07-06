@@ -58,32 +58,45 @@
                 <h2 class="sr-only">Perguntas realizadas</h2>
 
                 <div class="questions">
-                    <div class="question-wrapper">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/images/user3.svg">
+                    <% questions.forEach(question => { %>
+                        
+                        <div class="question-wrapper">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/images/user3.svg">
+                                </div>
+                                <div class="question">
+                                    <p> <%= question.title %> </p>
+                                </div>
                             </div>
-                            <div class="question">
-                                <p>O que é o Javascript?</p>
-                            </div>
+                            <div class="actions">
+                                <div>
+                                    <a class="check" data-id="2">
+                                        <img src="/images/check.svg" alt="Marcar como lida." id="check">
+                                        Marcar como lida
+                                    </a>
+    
+                                </div>
+                                <div>
+                                    <a class="delete" data-id="2">
+                                        <img src="/images/trash.svg" alt="Excluir pergunta" id="delete">
+                                        Excluir pergunta
+                                    </a>
+                                    
+                                </div>
+                            </div>                       
                         </div>
-                        <div class="actions">
-                            <div>
-                                <a class="check" data-id="2">
-                                    <img src="/images/check.svg" alt="Marcar como lida." id="check">
-                                    Marcar como lida
-                                </a>
+                    <% }); %>
 
-                            </div>
-                            <div>
-                                <a class="delete" data-id="2">
-                                    <img src="/images/trash.svg" alt="Excluir pergunta" id="delete">
-                                    Excluir pergunta
-                                </a>
-                                
-                            </div>
-                        </div>                       
-                    </div>
+
+
+
+
+
+
+
+
+
 
                     <div class="question-wrapper">
                         <div class="question-content">
