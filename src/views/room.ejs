@@ -71,14 +71,14 @@
                             </div>
                             <div class="actions">
                                 <div>
-                                    <a class="check" data-id="2">
+                                    <a href="#" class="check" data-id="<%= question.id %>">
                                         <img src="/images/check.svg" alt="Marcar como lida." id="check">
                                         Marcar como lida
                                     </a>
     
                                 </div>
                                 <div>
-                                    <a class="delete" data-id="2">
+                                    <a href="#" class="delete" data-id="<%= question.id %>">
                                         <img src="/images/trash.svg" alt="Excluir pergunta" id="delete">
                                         Excluir pergunta
                                     </a>
@@ -88,69 +88,27 @@
                         </div>
                     <% }); %>
 
+                    <% questionsRead.forEach(questionRead => { %>
 
-
-
-
-
-
-
-
-
-
-                    <div class="question-wrapper">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/images/user3.svg">
+                        <div class="question-wrapper read">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/images/user4.svg">
+                                </div>
+                                <div class="question">
+                                    <p> <%= questionRead.title %> </p>
+                                </div>
                             </div>
-                            <div class="question">
-                                <p>O que é o Typescript?</p>
-                            </div>
+                            <div class="actions">
+
+                                    <a href="#" class="delete" data-id="<%= questionRead.id %>">
+                                        <img src="/images/trash.svg" alt="Excluir pergunta">
+                                        Excluir pergunta
+                                    </a>
+                            </div>                       
                         </div>
-                        <div class="actions">
-                            <div>
-                                <a class="check" data-id="3">
-                                    <img src="/images/check.svg" alt="Marcar como lida." id="check">
-                                    Marcar como lida
-                                </a>
 
-                            </div>
-                            <div>
-                                <a class="delete" data-id="3">
-                                    <img src="/images/trash.svg" alt="Excluir pergunta" id="delete">
-                                    Excluir pergunta
-                                </a>
-                                
-                            </div>
-                        </div>                       
-                    </div>
-
-                    <div class="question-wrapper read">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/images/user4.svg">
-                            </div>
-                            <div class="question">
-                                <p>O que é o Phyton?</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <div>
-                                <a class="check" data-id="1">
-                                    <img src="/images/check.svg" alt="Marcar como lida.">
-                                    Marcar como não lida
-                                </a>
-
-                            </div>
-                            <div>
-                                <a class="delete" data-id="1">
-                                    <img src="/images/trash.svg" alt="Excluir pergunta">
-                                    Excluir pergunta
-                                </a>
-                                
-                            </div>
-                        </div>                       
-                    </div>
+                    <% }) %> 
                 </div>
             </section>
         </main>
