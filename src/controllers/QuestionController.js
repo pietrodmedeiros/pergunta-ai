@@ -14,15 +14,14 @@ module.exports = {
 
             if(action == "delete") {
                 await db.run(`DELETE FROM questions WHERE id = ${questionId}`)
-                console.log("excluida")
             }else if(action == "check"){
-                console.log("marcar como check")
                 await db.run(`UPDATE questions SET read = 1 WHERE id = ${questionId}`)
-                console.log("marcado check")
             }
-        }
+            res.redirect(`/room/${roomId}`)
+        }else {
+            res.render(`passincorrect`, {roomId: roomId})
+        } 
         
-        res.redirect(`/room/${roomId}`)
     },
 
     async create(req, res){

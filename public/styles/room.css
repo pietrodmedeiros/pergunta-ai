@@ -126,7 +126,7 @@ main{
 .question-content{
     display: flex;
     align-items: center;
-    ,min-height: 5.2rem;
+    min-height: 5.2rem;
 }
 
 .question-wrapper > p{

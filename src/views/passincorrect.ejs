@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>pergunta . me - Faça sua pergunta online!</title>
+    
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;900&display=swap" rel="stylesheet">
+    
+        <!-- Styles - CSS -->
+        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/room.css">
+        <link rel="stylesheet" href="/styles/modal.css">
+    
+    </head>
+<body>
+    <div id="home" class="content">
+        <header>
+            <a href="/">
+                <img src="/images/logo.svg" alt="logo pergunta-me">
+            </a>
+
+        <div class="buttons">
+            <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+                #<%= roomId %>
+                <img src="/images/copy.svg" alt="Copiar número da sala">
+            </div>
+            <a href="#" class="button">
+                <img src="/images/users2.svg" alt="Criar nova sala">
+                Criar sala
+            </a>
+        </div>    
+        </header>
+
+    </div>
+
+    <!-- ========== MODAL ========== -->
+
+    <div class="modal-wrapper active">
+        <div class="modal">
+            <h2>Oooops :/</h2>
+            <p>Senha incorreta! Tente novamente!</p>
+            <form action="#" method="POST">
+
+                <div class="buttons">
+                    <div class="button gray delete">
+                    <a id="back" href="/room/<%= roomId %>">Voltar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<script src="/scripts/main.js" defer type="module">
+
+</script>
+
+</body>
+</html>
