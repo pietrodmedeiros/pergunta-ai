@@ -28,6 +28,12 @@ html {
     font-size: 62.5%;
 }
 
+#logo {
+    width: 40rem;
+    margin-left: 0rem;
+    margin-top: -3rem;
+}
+
 h2 {
     font-family: 'Poppins', 'sans-serif';
     font-size: clamp(20px, 5vw, 2.8rem);
