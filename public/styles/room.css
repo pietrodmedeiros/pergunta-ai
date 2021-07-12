@@ -168,3 +168,25 @@ main{
     border: none;
     box-shadow: none;
 }
+
+/* ========== No Question ==========*/
+
+.noquestions{
+    text-align: center;
+    margin-top: 5.2rem;
+    padding-bottom: 19.7rem;
+}
+
+.noquestions p{
+    margin-top:1.2rem;
+    margin-bottom: 1.3rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.noquestions p + p{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+
+}

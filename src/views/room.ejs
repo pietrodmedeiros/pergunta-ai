@@ -58,6 +58,16 @@
                 <h2 class="sr-only">Perguntas realizadas</h2>
 
                 <div class="questions">
+
+                    <% if(isNoQuestionstions) {%>
+                        <div class="noquestions">
+                        <img src="/images/no-question.svg" alt="sem perguntas">
+                        <p class="title">Nenhuma pergunta por aqui...</p>
+                        <p class="text">Faça sua primeira pergunta e envie o <br>código dessa sala para outras pessoas!</p>
+                    
+                        </div>
+                    <% } %>    
+
                     <% questions.forEach(question => { %>
                         
                         <div class="question-wrapper">
